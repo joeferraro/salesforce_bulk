@@ -11,8 +11,8 @@ module SalesforceBulk
 
     @@SALESFORCE_API_VERSION = '23.0'
 
-    def initialize(username, password)
-      @connection = SalesforceBulk::Connection.new(username, password, @@SALESFORCE_API_VERSION)
+    def initialize(username, password, host)
+      @connection = SalesforceBulk::Connection.new(username, password, @@SALESFORCE_API_VERSION, host)
     end
 
     def upsert(sobject, records, external_field)
